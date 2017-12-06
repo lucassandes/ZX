@@ -1,0 +1,14 @@
+{
+    "name": "zx_code_challenge",
+    "version": "1.0.0",
+    "description": "A simple front-end test",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lucassandes/ZX"
+    },
+    "author": "Lucas Sandes",
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-sass": "^3.1.0"
+    }
+}

@@ -1,0 +1,294 @@
+html, body {
+  height: 100%;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+input, textarea {
+  border: none;
+  box-shadow: none; }
+  input:focus, textarea:focus {
+    outline: none; }
+
+.container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box; }
+
+.container-big {
+  position: relative;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box; }
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px; }
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 95%;
+    padding: 0; } }
+
+/* For devices larger than 550px */
+/* columns */
+.col-xs-1 {
+  width: 8.33333%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-2 {
+  width: 16.66667%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-3 {
+  width: 25%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-4 {
+  width: 33.33333%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-5 {
+  width: 41.66667%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-6 {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-7 {
+  width: 58.33333%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-8 {
+  width: 66.66667%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-9 {
+  width: 75%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-10 {
+  width: 83.33333%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-11 {
+  width: 91.66667%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+.col-xs-12 {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px; }
+
+/* offsets */
+.offset-col-xs-1 {
+  margin-left: 8.33333%; }
+
+.offset-col-xs-2 {
+  margin-left: 16.66667%; }
+
+.offset-col-xs-3 {
+  margin-left: 25%; }
+
+.offset-col-xs-4 {
+  margin-left: 33.33333%; }
+
+.offset-col-xs-5 {
+  margin-left: 41.66667%; }
+
+.offset-col-xs-6 {
+  margin-left: 50%; }
+
+.offset-col-xs-7 {
+  margin-left: 58.33333%; }
+
+.offset-col-xs-8 {
+  margin-left: 66.66667%; }
+
+.offset-col-xs-9 {
+  margin-left: 75%; }
+
+.offset-col-xs-10 {
+  margin-left: 83.33333%; }
+
+.offset-col-xs-11 {
+  margin-left: 91.66667%; }
+
+.offset-col-xs-12 {
+  margin-left: 100%; }
+
+@media (min-width: 550px) {
+  /* columns */
+  .col-1 {
+    width: 8.33333%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-2 {
+    width: 16.66667%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-3 {
+    width: 25%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-4 {
+    width: 33.33333%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-5 {
+    width: 41.66667%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-6 {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-7 {
+    width: 58.33333%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-8 {
+    width: 66.66667%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-9 {
+    width: 75%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-10 {
+    width: 83.33333%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-11 {
+    width: 91.66667%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  .col-12 {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px; }
+  /* offsets */
+  .offset-col-1 {
+    margin-left: 8.33333%; }
+  .offset-col-2 {
+    margin-left: 16.66667%; }
+  .offset-col-3 {
+    margin-left: 25%; }
+  .offset-col-4 {
+    margin-left: 33.33333%; }
+  .offset-col-5 {
+    margin-left: 41.66667%; }
+  .offset-col-6 {
+    margin-left: 50%; }
+  .offset-col-7 {
+    margin-left: 58.33333%; }
+  .offset-col-8 {
+    margin-left: 66.66667%; }
+  .offset-col-9 {
+    margin-left: 75%; }
+  .offset-col-10 {
+    margin-left: 83.33333%; }
+  .offset-col-11 {
+    margin-left: 91.66667%; }
+  .offset-col-12 {
+    margin-left: 100%; } }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.space-between {
+  justify-content: space-between; }
+
+.absolute-right {
+  position: absolute;
+  right: 0; }
+
+.top-zero {
+  top: 0; }
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto; }
+
+.text-center {
+  text-align: center; }
+
+.flex-center {
+  display: flex;
+  align-items: center; }
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+.full-height {
+  height: 100%;
+  max-height: 100%; }
+
+.full-block {
+  display: block;
+  width: 100%; }
+
+.center-block {
+  display: block;
+  margin: 0 auto; }
+
+@media (max-width: 550px) {
+  .hidden-xs {
+    /* This is the very only reason I think !important is plausible. When I need some element to be hidden, I need it hidden no matter what.
+        That's why I kept it here*/
+    display: none !important; } }
