@@ -1,3 +1,10 @@
+/*
+@gray-base:              #000;
+@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-dark:              lighten(@gray-base, 20%);   // #333
+@gray:                   lighten(@gray-base, 33.5%); // #555
+@gray-light:             lighten(@gray-base, 46.7%); // #777
+@gray-lighter:           lighten(@gray-base, 93.5%); // #eee */
 html, body {
   height: 100%;
   margin: 0; }
@@ -40,7 +47,7 @@ input, textarea {
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
-    width: 95%;
+    width: 90%;
     padding: 0; } }
 
 /* For devices larger than 550px */
@@ -248,16 +255,6 @@ input, textarea {
 .pull-right {
   float: right; }
 
-.space-between {
-  justify-content: space-between; }
-
-.absolute-right {
-  position: absolute;
-  right: 0; }
-
-.top-zero {
-  top: 0; }
-
 .center-block {
   display: block;
   margin-right: auto;
@@ -274,6 +271,9 @@ input, textarea {
   display: block;
   max-width: 100%;
   height: auto; }
+
+.no-padding {
+  padding: 0; }
 
 .full-height {
   height: 100%;
@@ -292,3 +292,35 @@ input, textarea {
     /* This is the very only reason I think !important is plausible. When I need some element to be hidden, I need it hidden no matter what.
         That's why I kept it here*/
     display: none !important; } }
+
+body {
+  font-family: 'Poppins', sans-serif; }
+
+#header {
+  background: black;
+  color: white; }
+  #header .logo {
+    padding: 15px; }
+    #header .logo img {
+      max-height: 90px; }
+    #header .logo .brand-name {
+      font-size: 70px;
+      font-family: 'Permanent Marker', cursive;
+      padding: 0 15px;
+      /*fixing weird line height of the font-family*/
+      margin-top: -15px; }
+    #header .logo .brand-business {
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 2px; }
+
+#main h1 {
+  font-size: 60px;
+  line-height: 100%; }
+
+#main h2 {
+  font-weight: normal; }
+
+#footer {
+  background: #333;
+  color: #f6f8f9; }

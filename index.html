@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Zé Delivery</title>
+    <title>Joe's Delivery</title>
     <meta name="description" content="">
     <meta name="author" content="Lucas Sandes">
 
@@ -12,12 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
     <!-- CSS -->
-    <!--<link rel="stylesheet" href="css/normalize.css">-->
+
     <link rel="stylesheet" href="css/simple-line-icons.css">
-    
+    <link rel="stylesheet" href="css/style.css">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -27,21 +29,35 @@
 <body>
 
     <header id="header">
-        <div class="logo">
-            LOGO 
+        <div class="logo container flex-center">
+            <img src="images/logo-mobile.png" />
+            <div class="brand-name">Joe's</div>
+            <div class="brand-business">
+                Beverage
+                <br/> Delivery
+            </div>
         </div>
     </header>
 
-    <main id="main">
-        <h1>Cold beer in up to 1h</h1>
-        <h2>Ordering beer easy as ordering pizza!</h2>
+    <main id="main" class="container flex-center">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-10">
+                    <h1>Cold beer in up to 1h</h1>
+                    <h2>Ordering beer easy as ordering pizza!</h2>
 
-        <label>Delivery adress</label>
-        <input type="text" placeholder="What's the adress?" />
-
+                    <label>Delivery adress</label>
+                    <input type="text" placeholder="What's the adress?" />
+                </div>
+            </div>
+        </div>
+        <div class="col-6 no-padding">
+            <img src="images/beers.jpg" class="img-responsive pull-right" />
+        </div>
     </main>
     <footer id="footer">
         <div class="">
+            Joe's Delivery
             <ul>
                 <li>How it works?</li>
                 <li>Terms of use/Privacy</li>
@@ -50,13 +66,19 @@
         </div>
         <div class="social-net">
             aqui
-            <a href=""><i class="icon-social-facebook"></i></a>
-            <a href=""><i class="icon-social-twitter"></i></a>
-            <a href=""><i class="icon-social-instagram"></i></a>
+            <a href="">
+                <i class="icon-social-facebook"></i>
+            </a>
+            <a href="">
+                <i class="icon-social-twitter"></i>
+            </a>
+            <a href="">
+                <i class="icon-social-instagram"></i>
+            </a>
         </div>
 
         <hr/>
-        <p class="text-center">2017 Zé Delivery - Todos os direitos reservados</p>
+        <p class="text-center">2017 Joe's Delivery</p>
     </footer>
 
     <!-- javaScript -->
