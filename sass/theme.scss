@@ -1,26 +1,22 @@
-body{
+body {
     font-family: 'Poppins', sans-serif;
 }
 
 #header {
     background: black;
-    color: white; 
-    
-    
+    color: white;
     .logo {
         padding: $basic-padding;
-        img{
+        img {
             max-height: 90px;
         }
-
         .brand-name {
             font-size: 70px;
             font-family: 'Permanent Marker', cursive;
             padding: 0 $basic-padding;
             /*fixing weird line height of the font-family*/
-            margin-top: -$basic-padding; 
+            margin-top: -$basic-padding;
         }
-
         .brand-business {
             font-size: 8px;
             text-transform: uppercase;
@@ -37,8 +33,80 @@ body{
     h2 {
         font-weight: normal;
     }
+    input {
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+    }
+    label {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    .search-bar {
+        position: relative;
+        @include border-radius(3px);
+        border: 1px solid $grey-light;
+        margin-top: $basic-padding / 3;
+        margin-bottom: $basic-padding*2;
+        i {
+            font-size: 20px;
+        }
+        input {
+            box-sizing: border-box;
+            padding: $basic-padding $basic-padding $basic-padding $basic-padding*3;
+            font-size: 16px;
+            color: $grey;
+        }
+    }
+    .icon-input {
+        color: darken($grey-light, 10%);
+        padding-left: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
+
 #footer {
     background: $grey-dark;
-    color: $grey-lighter;
+    color: $grey;
+    padding: $basic-padding * 2 0 $basic-padding 0;
+    .footer-menu-title{
+        font-size: 20px;
+    }
+    .social-net {
+        font-size: 20px;
+        a {
+            color: $grey;
+            margin-left: $basic-padding;
+            &:hover {
+                color: $brand-main;
+            }
+        }
+    }
+    hr {
+        height: 1px;
+        border-top: 1px solid darken($grey, 20%);
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+    }
+    .copyright {
+        font-size: 10px;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        li {
+            list-style: none;
+            margin: $basic-padding / 2 0;
+            a {
+                color: $grey-lighter;
+                &:hover {
+                    color: $brand-main;
+                }
+            }
+        }
+    }
 }

@@ -321,6 +321,68 @@ body {
 #main h2 {
   font-weight: normal; }
 
+#main input {
+  width: 100%;
+  font-family: 'Poppins', sans-serif; }
+
+#main label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px; }
+
+#main .search-bar {
+  position: relative;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #ECECEC;
+  margin-top: 5px;
+  margin-bottom: 30px; }
+  #main .search-bar i {
+    font-size: 20px; }
+  #main .search-bar input {
+    box-sizing: border-box;
+    padding: 15px 15px 15px 45px;
+    font-size: 16px;
+    color: #8b8b8b; }
+
+#main .icon-input {
+  color: lightgray;
+  padding-left: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+
 #footer {
   background: #333;
-  color: #f6f8f9; }
+  color: #8b8b8b;
+  padding: 30px 0 15px 0; }
+  #footer .footer-menu-title {
+    font-size: 20px; }
+  #footer .social-net {
+    font-size: 20px; }
+    #footer .social-net a {
+      color: #8b8b8b;
+      margin-left: 15px; }
+      #footer .social-net a:hover {
+        color: #fcd500; }
+  #footer hr {
+    height: 1px;
+    border-top: 1px solid #585858;
+    border-left: none;
+    border-right: none;
+    border-bottom: none; }
+  #footer .copyright {
+    font-size: 10px; }
+  #footer ul {
+    margin: 0;
+    padding: 0;
+    font-size: 14px; }
+    #footer ul li {
+      list-style: none;
+      margin: 7.5px 0; }
+      #footer ul li a {
+        color: #f6f8f9; }
+        #footer ul li a:hover {
+          color: #fcd500; }

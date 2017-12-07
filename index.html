@@ -30,9 +30,9 @@
 
     <header id="header">
         <div class="logo container flex-center">
-            <img src="images/logo-mobile.png" />
-            <div class="brand-name">Joe's</div>
-            <div class="brand-business">
+            <img src="images/logo-mobile.png" class=""/>
+            <div class="brand-name hidden-xs">Joe's</div>
+            <div class="brand-business hidden-xs">
                 Beverage
                 <br/> Delivery
             </div>
@@ -42,43 +42,56 @@
     <main id="main" class="container flex-center">
         <div class="col-6">
             <div class="row">
-                <div class="col-10">
+                <div class="col-10 col-xs-12">
                     <h1>Cold beer in up to 1h</h1>
                     <h2>Ordering beer easy as ordering pizza!</h2>
 
-                    <label>Delivery adress</label>
-                    <input type="text" placeholder="What's the adress?" />
+                    <label for="search-input">Delivery adress</label>
+                    <div class="search-bar center-block">
+                        <i class="icon-location-pin icon-input"></i>
+                        <input id="search-input" class="search-input" placeholder="What's the adress?">
+                    </div>
+
+
                 </div>
             </div>
         </div>
-        <div class="col-6 no-padding">
+        <div class="col-6 no-padding hidden-xs">
             <img src="images/beers.jpg" class="img-responsive pull-right" />
         </div>
     </main>
     <footer id="footer">
-        <div class="">
-            Joe's Delivery
-            <ul>
-                <li>How it works?</li>
-                <li>Terms of use/Privacy</li>
-                <li>Get in touch</li>
-            </ul>
-        </div>
-        <div class="social-net">
-            aqui
-            <a href="">
-                <i class="icon-social-facebook"></i>
-            </a>
-            <a href="">
-                <i class="icon-social-twitter"></i>
-            </a>
-            <a href="">
-                <i class="icon-social-instagram"></i>
-            </a>
-        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-xs-8">
+                    <span class="footer-menu-title">Joe's Delivery</span>
+                    <ul>
+                        <li><a href="#">How it works?</a></li>
+                        <li><a href="#">Terms of use/Privacy</a></li>
+                        <li><a href="#">Get in touch</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-xs-4">
+                    <div class="social-net pull-right">
+                        <a href="#">
+                            <i class="icon-social-facebook"></i>
+                        </a>
+                        <a href="#">
+                            <i class="icon-social-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="icon-social-instagram"></i>
+                        </a>
+                    </div>  
+                </div>
 
-        <hr/>
-        <p class="text-center">2017 Joe's Delivery</p>
+
+                <div class="col-12 col-xs-12">
+                    <hr/>
+                    <p class="copyright text-center">2017 Joe's Delivery</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- javaScript -->
