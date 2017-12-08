@@ -1,5 +1,6 @@
-html,body{
-    height:100%;
+html,
+body {
+    height: 100%;
     margin: 0;
 }
 
@@ -7,9 +8,16 @@ a {
     text-decoration: none;
 }
 
-input, textarea {
+input,
+textarea {
     border: none;
     box-shadow: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
     &:focus {
         outline: none;
     }
