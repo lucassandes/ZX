@@ -1,10 +1,10 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static('./'));
+app.use(express.static('./www'));
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/www/index.html");
 });
 
 app.listen(8081, function(){
