@@ -4,10 +4,12 @@
   "description": "Simple Angular App",
   "main": "gulpfile.js",
   "dependencies": {
+    "angular-route": "^1.6.7",
     "express": "^4.16.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0"
   },
   "scripts": {
