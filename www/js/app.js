@@ -6,18 +6,21 @@
         .config(function ($routeProvider) {
             $routeProvider.when("/", {
                 templateUrl: "./components/home/home.html",
-                controller: "homeController as vm",
-           
+                controller: "homeController as vm"
             });
             $routeProvider.when("/products", {
                 templateUrl: "components/products/products.html",
-                controller: "homeController",
-               
+                controller: "homeController"
             });
 
             $routeProvider.otherwise({redirectTo: "/"});
-        });
-      
+        })
+        .config([
+            '$locationProvider',
+            function ($locationProvider) {
+                $locationProvider.hashPrefix('');
+            }
+        ]);
 
 }());
 
@@ -28,7 +31,7 @@
         .module('app')
         .controller('homeController', homeController);
 
-    function homeController($scope, homeService) {
+    function homeController($scope, homeService, $location) {
         /* jshint validthis:true */
         var vm = this;
         vm.getGeo = getGeo;
@@ -39,7 +42,7 @@
                 .getData()
                 .then(function successCallback(response) {
                     $scope.location = response.data.results[0].geometry.location;
-                    
+                    $location.path("/products");
                 }, function errorCallback(response) {
                     console.log("Ops... Error :(");
                 });
