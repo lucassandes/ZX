@@ -1,0 +1,24 @@
+<main id="main" class="container flex-center">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-10 col-xs-12">
+
+                <h1>Cold beer in up to 1h</h1>
+                <h2>Ordering beer easy as ordering pizza!</h2>
+
+                <label for="search-input">Delivery adress</label>
+                <div class="search-bar center-block">
+                    <i class="icon-location-pin icon-input"></i>
+                    <input id="search-input" class="search-input" placeholder="What's the adress?" ng-model="vm.address">
+
+                    <button class="" ng-click="vm.getGeo()">Continue</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-6 no-padding hidden-xs">
+        <img src="images/beers.jpg" class="img-responsive pull-right" />
+    </div>
+</main>
