@@ -1,24 +1,46 @@
 <div id="products" class="container">
     <div class="row">
-        <div class="col-3">
-            <div class="product-card">
-                <img src="https://s3-us-west-2.amazonaws.com/ze-delivery/upload/images/5825b75a5062e.jpg" class="img-responsive center-block"
-                />
+        <div class="col-xs-6">
+            <select>
+                <option value="0">Todos</option>
+                <option ng-repeat="cat in vm.categories" value="cat.id">{{cat.title}}</option>
+            </select>
+        </div>
 
-                <h1>{{geolocation}}</h1>
-                <span class="product-title center-block text-center">Skol 1L | Vasilhame Incluso.</span>
+        <div class="col-xs-6">
+            <div class="search-bar center-block">
+                <i class="icon-location-pin icon-input"></i>
+                <input id="search-products" type="search" class="search-input" placeholder="What's the adress?">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div ng-repeat="product in vm.products" class="col-3 col-xs-6">
+
+            <div class="product-card">
+                <img src="{{product.imageUrl}}" class="img-responsive center-block" />
+
+                <span class="product-title center-block text-center">{{product.title}}</span>
                 <span class="product-price center-block text-center">R$
-                    <span class="price">20,00</span>
+                    <span class="price">{{product.price}}</span>
                 </span>
 
                 <div class="center-block text-center">
-                    <button class="button button-remove">-</button>
-                    <input type="number" min="0" class="quantity" />
-                    <button class="button button-add">+</button>
+                    <button class="button button-remove" ng-click="vm.removeProduct($index)">-</button>
+                    <input type="number" min="0" ng-model="product.quantity" class="quantity" />
+                    <button class="button button-add" ng-click="vm.addProduct($index)">+</button>
                 </div>
             </div>
         </div>
 
     </div>
 
+</div>
+
+<div class="bill">
+    Total:
+    <span class="check">{{vm.check | currency }}</span>
+    <button>
+        <i class="icon-basket"></i> The check, Joe!</button>
 </div>

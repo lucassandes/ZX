@@ -67,9 +67,43 @@ body {
     }
 }
 
+.bill {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: $brand-main;
+    padding: $basic-padding;
+    z-index: 1;
+    border-top-left-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0, 0.3);
+    button {
+        font-family: 'Poppins', sans-serif;
+        background: lighten(black, 20%);
+        border: none;
+        @include border-radius(3px);
+        padding: $basic-padding;
+        color: $grey-light;
+        text-transform: uppercase;
+        font-size: 20px;
+        box-shadow: inset 0 0 10px rgba(0,0,0, 0.5);
+
+        &:hover{
+            background: lighten(black, 17%);
+        }
+        &:active{
+            background: lighten(black, 15%);
+        }
+    }
+}
+
 .product-card {
-    border: 1px solid $grey-light;
+    border: 2px solid $grey-light;
     @include border-radius(3px);
+    margin-top: $basic-padding * 2;
+    padding: $basic-padding;
+    img {
+        max-height: 200px;
+    }
     .quantity {
         @include border-radius(3px);
         border: 1px solid $grey-light;
@@ -80,19 +114,17 @@ body {
         height: $basic-padding * 3;
         width: $basic-padding * 3;
     }
-
     .product-title {
         padding: $basic-padding;
+        height: 45px;
     }
     .price {
         font-weight: bold;
         font-size: 26px;
-       
     }
-
     input {
         font-size: 24px;
-        max-width: $basic-padding*5;
+        max-width: $basic-padding*4;
         text-align: center;
     }
     .button-remove {
