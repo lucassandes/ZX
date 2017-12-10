@@ -5,21 +5,23 @@
         .module('app')
         .controller('homeController', homeController);
 
-    function homeController($scope, homeService, $location) {
+    function homeController($scope, homeService, $location, geolocationService) {
         /* jshint validthis:true */
         var vm = this;
-        vm.getGeo = getGeo;
-        vm.address = "Rua Américo Brasiliense, São Paulo";
+        //vm.getGeo = getGeo;
+        $scope.address = "Rua Américo Brasiliense, São Paulo";
 
-        function getGeo() {
+
+        $scope.getGeo = function() {
             homeService
                 .getData()
                 .then(function successCallback(response) {
-                    $scope.location = response.data.results[0].geometry.location;
-                    $location.path("/products");
+                    //$scope.geolocation.data = response.data.results[0].geometry.location;
+                    geolocationService.setGeolocation(response.data.results[0].geometry.location);
+                    $location.path("/products"); 
                 }, function errorCallback(response) {
                     console.log("Ops... Error :(");
                 });
-        }
+        };
     }
 })();

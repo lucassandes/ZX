@@ -6,11 +6,11 @@
         .config(function ($routeProvider) {
             $routeProvider.when("/", {
                 templateUrl: "./components/home/home.html",
-                controller: "homeController as vm"
+                controller: "homeController"
             });
             $routeProvider.when("/products", {
                 templateUrl: "components/products/products.html",
-                controller: "homeController"
+                controller: "productsController as vm"
             });
 
             $routeProvider.otherwise({redirectTo: "/"});
