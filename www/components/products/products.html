@@ -1,16 +1,16 @@
 <div id="products" class="container">
     <div class="row">
         <div class="col-xs-6">
-            <select>
-                <option value="0">Todos</option>
-                <option ng-repeat="cat in vm.categories" value="cat.id">{{cat.title}}</option>
+            <select ng-options="cat.title for cat in vm.categories track by cat.id" ng-model="selectedItem" ng-change="vm.queryProducts(selectedItem.id)">
             </select>
         </div>
 
         <div class="col-xs-6">
             <div class="search-bar center-block">
-                <i class="icon-location-pin icon-input"></i>
-                <input id="search-products" type="search" class="search-input" placeholder="What's the adress?">
+                <form ng-submit="vm.queryProducts(selectedItem.id, searchValue)">
+                    <i class="icon-location-pin icon-input"></i> 
+                    <input id="search-products" ng-model="searchValue" type="search" class="search-input" placeholder="What's the adress?">
+                </form>
             </div>
         </div>
     </div>
@@ -34,6 +34,7 @@
             </div>
         </div>
 
+        
     </div>
 
 </div>

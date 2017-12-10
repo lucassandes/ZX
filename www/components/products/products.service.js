@@ -19,8 +19,6 @@
    
         function getProducts(pocId, categoryId, search) {
             var parameters;
-            categoryId = (typeof categoryId !== 'undefined') ? categoryId : 0;
-            search = (typeof search !== 'undefined') ? search : "";
 
             parameters = {
                 //ES6 for sake of simplicity
