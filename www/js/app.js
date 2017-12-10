@@ -124,8 +124,6 @@
             $location.path("/");
         }
         
-     
-        
         function removeProduct(index) {
             if (vm.products[index].quantity > 0) {
                 vm.products[index].quantity--;

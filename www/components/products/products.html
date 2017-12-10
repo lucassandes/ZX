@@ -22,7 +22,7 @@
                 <img src="{{product.imageUrl}}" class="img-responsive center-block" />
 
                 <span class="product-title center-block text-center">{{product.title}}</span>
-                <span class="product-price center-block text-center">R$
+                <span class="product-price center-block text-center">$
                     <span class="price">{{product.price}}</span>
                 </span>
 
@@ -42,6 +42,6 @@
 <div class="bill">
     Total:
     <span class="check">{{vm.check | currency }}</span>
-    <button>
+    <button class="button-default uppercase">
         <i class="icon-basket"></i> The check, Joe!</button>
 </div>

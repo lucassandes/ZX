@@ -52,6 +52,10 @@
     margin: 0 auto;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 @media (max-width: 550px) {
     .hidden-xs {
         /* This is the very only reason I think !important is plausible. When I need some element to be hidden, I need it hidden no matter what.

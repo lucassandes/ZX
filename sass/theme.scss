@@ -42,6 +42,17 @@ body {
         font-weight: bold;
         font-size: 12px;
     }
+
+    button {
+        background:$brand-main;
+        font-size: 16px;
+        &:hover{
+            background: darken($brand-main, 3%);
+        }
+        &:active{
+            background: darken($brand-main, 5%);
+        }
+    }
     .search-bar {
         position: relative;
         @include border-radius(3px);
@@ -77,13 +88,11 @@ body {
     border-top-left-radius: 10px;
     box-shadow: inset 0 0 10px rgba(0,0,0, 0.3);
     button {
-        font-family: 'Poppins', sans-serif;
+        
         background: lighten(black, 20%);
-        border: none;
-        @include border-radius(3px);
-        padding: $basic-padding;
+       
         color: $grey-light;
-        text-transform: uppercase;
+        
         font-size: 20px;
         box-shadow: inset 0 0 10px rgba(0,0,0, 0.5);
 
@@ -95,9 +104,12 @@ body {
         }
     }
 }
-
+.button-default {
+    padding: $basic-padding;
+    border: none;
+}
 .product-card {
-    border: 2px solid $grey-light;
+    border: 2px solid $grey-lighter;
     @include border-radius(3px);
     margin-top: $basic-padding * 2;
     padding: $basic-padding;
@@ -112,7 +124,8 @@ body {
         @include border-radius(50%);
         font-size: 24px;
         height: $basic-padding * 3;
-        width: $basic-padding * 3;
+        width: $basic-padding * 3; 
+        border: 1px solid $grey-light;
     }
     .product-title {
         padding: $basic-padding;
