@@ -214,6 +214,7 @@
                     });
             }
             else {
+                vm.loading = false;
                 vm.errorMessage = "Sorry, no POCs found for this adress";
             }
         }
@@ -270,7 +271,7 @@
                     var pocSearch = response.data.data.pocSearch;
 
                     //If we use this routine below, POC will be 242
-                    pocId = getLastPoc(pocSearch);
+                    //pocId = getLastPoc(pocSearch);
 
                     //If we use this routine below, POC will be 243
                     pocId = getFirstPoc(pocSearch);
