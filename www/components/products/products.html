@@ -1,22 +1,55 @@
 <div id="products" class="container">
-    <div class="row">
-        <div class="col-xs-6">
-            <select ng-options="cat.title for cat in vm.categories track by cat.id" ng-model="selectedItem" ng-change="vm.queryProducts(selectedItem.id)">
-            </select>
+    <div class="row top-bar">
+        <div class="col-xs-6 flex">
+            <div class="search-bar center-block">
+                <select ng-options="cat.title for cat in vm.categories track by cat.id" ng-model="selectedItem" ng-change="vm.queryProducts(selectedItem.id)">
+                </select>
+            </div>
+
         </div>
 
-        <div class="col-xs-6">
+        <div class="col-xs-6 flex">
             <div class="search-bar center-block">
                 <form ng-submit="vm.queryProducts(selectedItem.id, searchValue)">
-                    <i class="icon-location-pin icon-input"></i> 
-                    <input id="search-products" ng-model="searchValue" type="search" class="search-input" placeholder="What's the adress?">
+                    <input id="search-products" ng-model="searchValue" type="search" class="search-input" placeholder="Search...">
+                    <i ng-click="vm.queryProducts(selectedItem.id, searchValue)" class="icon-magnifier icon-input"></i>
                 </form>
             </div>
         </div>
     </div>
+
+
+
+    <div ng-if="vm.loading">
+        <div class="loader">
+            <span>Loading...</span>
+            <div class="loader">Loading...</div>
+        </div>
+        <div class="row">
+            <div class="ui-loader">
+                <div ng-repeat="n in [1,2,3,4,5,6,7,8]" class="col-3 col-sm-6 col-md-4 col-xs-12">
+                    <div class="product-card">
+                        <img src="images/beer_placeholder.jpg" class="img-responsive center-block" />
+                        <span class="product-title center-block text-center">
+                            <span class="ui-loader-big"></span>
+                        </span>
+                        <span class="product-price center-block text-center">
+                            <span class="ui-loader-big"></span>
+                        </span>
+                        <span class="product-price center-block text-center">
+                            <span class="ui-loader-big"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row">
 
-        <div ng-repeat="product in vm.products" class="col-3 col-xs-6">
+
+        <div ng-repeat="product in vm.products" class="col-3 col-sm-6 col-md-4 col-xs-12">
 
             <div class="product-card">
                 <img src="{{product.imageUrl}}" class="img-responsive center-block" />
@@ -34,14 +67,16 @@
             </div>
         </div>
 
-        
+
     </div>
 
 </div>
 
 <div class="bill">
-    Total:
-    <span class="check">{{vm.check | currency }}</span>
+    <div>
+        <span class="total-label center-block text-center uppercase">Total</span>
+        <span class="check-value center-block text-center">{{vm.check | currency }}</span>
+    </div>
     <button class="button-default uppercase">
         <i class="icon-basket"></i> The check, Joe!</button>
 </div>
