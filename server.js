@@ -8,5 +8,7 @@ app.get('/', function (req, res) {
 });
 
 app.listen(8081, function(){
-    console.log("Server runnning... port: 8081");
-})
+    console.log("Server runnning...");
+    console.log("Port 8081");
+    console.log("http://localhost:8081");
+});
