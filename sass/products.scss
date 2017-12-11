@@ -1,0 +1,128 @@
+
+.bill {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: $brand-main;
+    padding: $basic-padding;
+    z-index: 1;
+    border-top-left-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    .check-value {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .total-label {
+        font-size: 14px;
+    }
+    button {
+        background: lighten(black, 20%);
+        margin-left: $basic-padding;
+        color: $grey-light;
+        font-size: 20px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        &:hover {
+            background: lighten(black, 17%);
+        }
+        &:active {
+            background: lighten(black, 15%);
+        }
+    }
+}
+
+.button-default {
+    padding: $basic-padding;
+    border: none;
+}
+
+.product-card {
+    border: 2px solid $grey-lighter;
+    @include border-radius(3px);
+    margin-top: $basic-padding * 2;
+    padding: $basic-padding;
+    img {
+        max-height: 200px;
+    }
+    .quantity {
+        @include border-radius(3px);
+        border: 1px solid $grey-light;
+    }
+    .button {
+        @include border-radius(50%);
+        font-size: 24px;
+        height: $basic-padding * 3;
+        width: $basic-padding * 3;
+        border: 1px solid $grey-light;
+    }
+    .product-title {
+        padding: $basic-padding 0;
+        height: 45px;
+    }
+    .price {
+        font-weight: bold;
+        font-size: 26px;
+    }
+    input {
+        font-size: 24px;
+        max-width: $basic-padding*4;
+        text-align: center;
+    }
+    .button-remove {
+        &:active {
+            background: darken(white, 5%);
+            border: 2px solid $grey;
+        }
+    }
+    .button-add {
+        background: $brand-main;
+        color: black;
+        &:active {
+            background: darken($brand-main, 5%);
+            border: 2px solid $grey;
+        }
+    }
+}
+
+.top-bar {
+    margin-top: $basic-padding;
+    display: flex;
+    .search-bar {
+        position: relative;
+        @include border-radius(3px);
+        border: 1px solid $grey-light;
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+        margin-bottom: $basic-padding;
+        select {
+            border: none;
+            background: white;
+            width: 100%;
+            padding: $basic-padding $basic-padding $basic-padding $basic-padding*3;
+            font-size: 16px;
+        }
+        i {
+            cursor: pointer;
+            font-size: 20px;
+            right: 0;
+            padding-right: 10px;
+            &:hover {
+                color: $grey;
+            }
+        }
+        form {
+            width: 100%;
+        }
+        input {
+            box-sizing: border-box;
+            padding: $basic-padding $basic-padding*3 $basic-padding $basic-padding;
+            font-size: 16px;
+            color: $grey;
+            width: 100%;
+        }
+    }
+}
+
+

@@ -1,5 +1,5 @@
 <main id="main" class="container flex-center">
-    <div class="col-6">
+    <div class="col-6 col-md-10">
         <div class="row">
             <div class="col-10 col-xs-12">
 
@@ -9,13 +9,14 @@
                 <label for="search-input">Delivery adress</label>
                 <div class="search-bar center-block">
                     <i class="icon-location-pin icon-input"></i>
-                    <input type="search" id="search-input" class="search-input" placeholder="What's the adress?" ng-model="address"> 
+                    <input type="search" id="search-input" class="search-input" placeholder="What's the adress?" ng-model="vm.address"> 
                 </div>
-                <button class="pull-right button-default uppercase" ng-click="getGeo()">Continue</button>
+                <button class="pull-right button-default uppercase" ng-click="vm.getGeo(vm.address)">Continue</button>
             </div>
         </div>
     </div>
-    <div class="col-6 no-padding hidden-xs">
+    <div class="col-6 no-padding hidden-md">
         <img src="images/beers.jpg" class="img-responsive pull-right" />
     </div>
 </main>
+

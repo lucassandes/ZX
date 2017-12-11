@@ -60,7 +60,51 @@ $max-columns: 12;
     }
 }
 
-@media (min-width: 550px) {
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 470px) { 
+    @for $i from 1 through $max-columns {
+        .col-sm-#{$i} {
+            width: (100% / $max-columns) * $i;
+            float: left; 
+            box-sizing: border-box;
+            padding: 0 $basic-padding;
+        }
+    }
+    /* offsets */
+    @for $i from 1 through $max-columns {
+        .offset-col-sm-#{$i} {
+            margin-left: (100% / $max-columns) * $i;
+        }
+    }
+    
+ }
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 730px) { 
+    @for $i from 1 through $max-columns {
+        .col-md-#{$i} {
+            width: (100% / $max-columns) * $i;
+            float: left; 
+            box-sizing: border-box;
+            padding: 0 $basic-padding;
+        }
+    }
+    /* offsets */
+    @for $i from 1 through $max-columns {
+        .offset-col-md-#{$i} {
+            margin-left: (100% / $max-columns) * $i;
+        }
+    }
+    
+ }
+
+
+
+/* Large devices (large desktops, 1200px and up) */
+// @media (min-width: @screen-lg-min) { ... }
+
+@media (min-width: 1120px) {
     
     /* columns */
     @for $i from 1 through $max-columns {

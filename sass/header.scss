@@ -1,0 +1,40 @@
+#header {
+    background: black;
+    color: white;
+    .logo {
+        padding: $basic-padding;
+        img {
+            max-height: 50px; //display: block;
+            //margin: auto;
+        }
+        .brand-name {
+            font-size: 70px;
+            font-family: 'Permanent Marker', cursive;
+            padding: 0 $basic-padding;
+            /*fixing weird line height of the font-family*/
+            margin-top: -$basic-padding;
+        }
+        .brand-business {
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+    @media (min-width: 470px) {
+        .logo {
+            padding: $basic-padding;
+            img {
+                max-height: 90px; 
+            }
+        }
+    }
+    @media (max-width: 470px) {
+        .logo {
+            padding: $basic-padding;
+            img {
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+}

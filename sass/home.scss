@@ -1,0 +1,48 @@
+#main {
+    h1 {
+        font-size: 60px;
+        line-height: 100%;
+    }
+    h2 {
+        font-weight: normal;
+    }
+    input {
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+    }
+    label {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    button {
+        background: $brand-main;
+        font-size: 16px;
+        margin-bottom: $basic-padding*2;
+        &:hover {
+            background: darken($brand-main, 3%);
+        }
+        &:active {
+            background: darken($brand-main, 5%);
+        }
+    }
+    .search-bar {
+        position: relative;
+        @include border-radius(3px);
+        border: 1px solid $grey-light;
+        margin-top: $basic-padding / 3;
+        margin-bottom: $basic-padding*2;
+        i {
+            font-size: 20px;
+        }
+        input {
+            box-sizing: border-box;
+            padding: $basic-padding $basic-padding $basic-padding $basic-padding*3;
+            font-size: 16px;
+            color: $grey;
+        }
+    }
+    .icon-input {
+        color: darken($grey-light, 10%);
+    }
+}

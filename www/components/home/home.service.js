@@ -5,20 +5,19 @@
         .module('app')
         .factory('homeService', homeService);
 
-    function homeService($http) {
+    function homeService($http, GOOGLE_MAPS) {
         var service = {
-            getData: getData
+            getAdressData: getAdressData
         };
 
         return service;
 
-        function getData() {
+        function getAdressData(adress) {
+            var formattedAdress = adress.replace(/ /g,"+");
 
-            var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyA_zY0dIwMZ2LDtkKIc7EJRsJjCW4awvbc";
-            
-            url = "https://maps.googleapis.com/maps/api/geocode/json?address=Rua+Américo+Brasiliense,+Sao+Paulo,+SP&key=AIzaSyA_zY0dIwMZ2LDtkKIc7EJRsJjCW4awvbc";
-        
-            return $http.get(url);
+            var endpoint = GOOGLE_MAPS.API_URL + formattedAdress + "&key=" + GOOGLE_MAPS.KEY;
+          
+            return $http.get(endpoint);
         }
     }
 })();

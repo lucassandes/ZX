@@ -1,0 +1,26 @@
+
+.loader {
+    background: rgba(255, 255, 255, 0.3);
+    height: 100%;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    span {
+        display: flex;
+        color: black;
+    }
+}
+
+.ui-loader-big {
+    width: 90%;
+    height: 10px;
+    background: $grey-light;
+    display: inline-block;
+}

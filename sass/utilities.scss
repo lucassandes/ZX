@@ -22,7 +22,9 @@
 .text-center {
     text-align: center;
 }
-
+.flex {
+    display: flex;
+}
 .flex-center {
     display: flex;
     align-items: center;
@@ -56,8 +58,23 @@
     text-transform: uppercase;
 }
 
+
+.icon-input {
+    color: #c3ced2;
+    padding-left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+
 @media (max-width: 550px) {
     .hidden-xs {
+        /* This is the very only reason I think !important is plausible. When I need some element to be hidden, I need it hidden no matter what.
+        That's why I kept it here*/
+        display: none !important;
+    }
+}
+@media (max-width: 750px) {
+    .hidden-md {
         /* This is the very only reason I think !important is plausible. When I need some element to be hidden, I need it hidden no matter what.
         That's why I kept it here*/
         display: none !important;

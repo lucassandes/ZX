@@ -1,7 +1,15 @@
 @import 'mixins';
 @import 'variables';
 @import 'reset';
-
 @import 'grid';
 @import 'utilities';
-@import 'theme';
+
+@import 'header';
+@import 'home';
+@import 'products';
+@import 'footer';
+@import 'loader';
+
+body {
+    font-family: 'Poppins', sans-serif;
+}

@@ -16,7 +16,7 @@
         return service;
 
         function setGeolocation(data) {
-            console.log("Saving data ");  
+            console.log("Saving data geolocation data...");  
             savedData = data;
         }
 

@@ -5,18 +5,16 @@
         .module('app')
         .controller('homeController', homeController);
 
-    function homeController($scope, homeService, $location, geolocationService) {
+    function homeController( homeService, $location, geolocationService) {
         /* jshint validthis:true */
         var vm = this;
-        //vm.getGeo = getGeo;
-        $scope.address = "Rua Américo Brasiliense, São Paulo";
+        vm.address = "Rua Américo Brasiliense, São Paulo";
 
-
-        $scope.getGeo = function() {
+        vm.getGeo = function(adress) {
             homeService
-                .getData()
+                .getAdressData(adress)
                 .then(function successCallback(response) {
-                    //$scope.geolocation.data = response.data.results[0].geometry.location;
+                    //console.log(response.data);
                     geolocationService.setGeolocation(response.data.results[0].geometry.location);
                     $location.path("/products"); 
                 }, function errorCallback(response) {
