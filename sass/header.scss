@@ -7,9 +7,11 @@
             max-height: 50px; //display: block;
             //margin: auto;
         }
-        a, a:hover, a:active{
+        a,
+        a:hover,
+        a:active {
             color: white;
-            border:none;
+            border: none;
         }
         .brand-name {
             font-size: 70px;
@@ -28,14 +30,15 @@
         .logo {
             padding: $basic-padding;
             img {
-                max-height: 90px; 
+                max-height: 90px;
             }
         }
     }
     @media (max-width: 470px) {
         .logo {
             padding: $basic-padding;
-            img {
+            //center logo on small devices
+            .logo-center-xs { 
                 display: block;
                 margin: auto;
             }

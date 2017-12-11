@@ -521,7 +521,9 @@ input::-webkit-inner-spin-button {
     padding: 15px; }
     #header .logo img {
       max-height: 50px; }
-    #header .logo a, #header .logo a:hover, #header .logo a:active {
+    #header .logo a,
+    #header .logo a:hover,
+    #header .logo a:active {
       color: white;
       border: none; }
     #header .logo .brand-name {
@@ -542,7 +544,7 @@ input::-webkit-inner-spin-button {
   @media (max-width: 470px) {
     #header .logo {
       padding: 15px; }
-      #header .logo img {
+      #header .logo .logo-center-xs {
         display: block;
         margin: auto; } }
 
