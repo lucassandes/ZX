@@ -9,7 +9,7 @@
         /* jshint validthis:true */
         var vm = this;
         vm.address = "Rua Américo Brasiliense, São Paulo";
-
+        vm.errorMessage = "";
         vm.getGeo = function(adress) {
             homeService
                 .getAdressData(adress)
@@ -19,6 +19,7 @@
                     $location.path("/products"); 
                 }, function errorCallback(response) {
                     console.log("Ops... Error :(");
+                    vm.errorMessage = "Ops... Error :(";
                 });
         };
     }

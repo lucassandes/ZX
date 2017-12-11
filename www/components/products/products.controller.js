@@ -44,6 +44,7 @@
                 "id": 0,
                 "title": "Todos"
             };
+            vm.errorMessage="";
             productsService
                 .getCategories()
                 .then(function successCallback(response) {
@@ -53,6 +54,8 @@
                     console.log("categories", vm.categories);
                 }, function errorCallback(response) {
                     console.log("Ops... Error :(");
+                    vm.loading = false;
+                    vm.errorMessage = "Ops... Error :(";
                 });
         };
 
@@ -63,6 +66,8 @@
             vm.products = [];
 
             vm.loading = true;
+            vm.emptyMessage = "";
+            vm.errorMessage = "";
             console.log("Query Products...");
             console.log("pocId:", pocId);
             console.log("categoryId:", categoryId);
@@ -71,23 +76,28 @@
             productsService
                 .getProducts(pocId, categoryId, search)
                 .then(function successCallback(response) {
-                    console.log(response.data);
+                    console.log(response.data); 
                     var products = response.data.data.poc.products;
                     products.forEach(element => {
                         element.productVariants[0].quantity = "";
-                        vm
-                            .products
-                            .push(element.productVariants[0]);
+                        vm.products.push(element.productVariants[0]);
                     });
 
+                    console.log("lenght:", products.length);
+                    if(products.length == 0){
+                        vm.emptyMessage = "Sorry, bro. We couldn't find anything";
+                    }
                     vm.loading = false;
                 }, function errorCallback(response) {
                     vm.loading = false;
+                    vm.errorMessage = "Ops... Error :(";
                     console.log("Ops... Error :(");
                 });
         }
 
         var getPoc = function () {
+            vm.errorMessage = "";
+            
             productsService
                 .getPoc(geolocation)
                 .then(function successCallback(response) {
@@ -104,7 +114,8 @@
                     queryProducts();
 
                 }, function errorCallback(response) {
-                    console.log("Ops... Error :(");
+                    vm.loading = false;
+                    vm.errorMessage = "Ops... Error :(";
                 });
 
         };

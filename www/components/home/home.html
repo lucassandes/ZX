@@ -12,6 +12,7 @@
                     <input type="search" id="search-input" class="search-input" placeholder="What's the adress?" ng-model="vm.address"> 
                 </div>
                 <button class="pull-right button-default uppercase" ng-click="vm.getGeo(vm.address)">Continue</button>
+                <p>{{vm.errorMessage}}</p>
             </div>
         </div>
     </div>

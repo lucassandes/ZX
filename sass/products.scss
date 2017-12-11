@@ -1,4 +1,10 @@
-
+#products {
+    min-height: 300px;
+    h2 {
+        color:$grey;
+        font-weight: normal;
+    }
+}
 .bill {
     position: fixed;
     bottom: 0;

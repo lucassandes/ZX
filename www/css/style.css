@@ -14,11 +14,11 @@ a {
   text-decoration: none; }
 
 input,
-textarea {
+textarea, select {
   border: none;
   box-shadow: none; }
   input:focus,
-  textarea:focus {
+  textarea:focus, select:focus {
     outline: none; }
 
 button {
@@ -587,6 +587,12 @@ input::-webkit-inner-spin-button {
 
 #main .icon-input {
   color: #c6c6c6; }
+
+#products {
+  min-height: 300px; }
+  #products h2 {
+    color: #8b8b8b;
+    font-weight: normal; }
 
 .bill {
   position: fixed;

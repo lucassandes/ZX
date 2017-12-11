@@ -36,9 +36,7 @@
         })())
 
         .constant('API_URL', (function () {
-            return {
-                UNAUTHORIZED: "unauthorized"
-            };
+            return "https://803votn6w7.execute-api.us-west-2.amazonaws.com/dev/public/graphql";
         })());
 
 })();
@@ -80,7 +78,7 @@
         /* jshint validthis:true */
         var vm = this;
         vm.address = "Rua Américo Brasiliense, São Paulo";
-
+        vm.errorMessage = "";
         vm.getGeo = function(adress) {
             homeService
                 .getAdressData(adress)
@@ -90,6 +88,7 @@
                     $location.path("/products"); 
                 }, function errorCallback(response) {
                     console.log("Ops... Error :(");
+                    vm.errorMessage = "Ops... Error :(";
                 });
         };
     }
@@ -163,6 +162,7 @@
                 "id": 0,
                 "title": "Todos"
             };
+            vm.errorMessage="";
             productsService
                 .getCategories()
                 .then(function successCallback(response) {
@@ -172,6 +172,8 @@
                     console.log("categories", vm.categories);
                 }, function errorCallback(response) {
                     console.log("Ops... Error :(");
+                    vm.loading = false;
+                    vm.errorMessage = "Ops... Error :(";
                 });
         };
 
@@ -182,6 +184,8 @@
             vm.products = [];
 
             vm.loading = true;
+            vm.emptyMessage = "";
+            vm.errorMessage = "";
             console.log("Query Products...");
             console.log("pocId:", pocId);
             console.log("categoryId:", categoryId);
@@ -190,23 +194,28 @@
             productsService
                 .getProducts(pocId, categoryId, search)
                 .then(function successCallback(response) {
-                    console.log(response.data);
+                    console.log(response.data); 
                     var products = response.data.data.poc.products;
                     products.forEach(element => {
                         element.productVariants[0].quantity = "";
-                        vm
-                            .products
-                            .push(element.productVariants[0]);
+                        vm.products.push(element.productVariants[0]);
                     });
 
+                    console.log("lenght:", products.length);
+                    if(products.length == 0){
+                        vm.emptyMessage = "Sorry, bro. We couldn't find anything";
+                    }
                     vm.loading = false;
                 }, function errorCallback(response) {
                     vm.loading = false;
+                    vm.errorMessage = "Ops... Error :(";
                     console.log("Ops... Error :(");
                 });
         }
 
         var getPoc = function () {
+            vm.errorMessage = "";
+            
             productsService
                 .getPoc(geolocation)
                 .then(function successCallback(response) {
@@ -223,7 +232,8 @@
                     queryProducts();
 
                 }, function errorCallback(response) {
-                    console.log("Ops... Error :(");
+                    vm.loading = false;
+                    vm.errorMessage = "Ops... Error :(";
                 });
 
         };
@@ -240,14 +250,14 @@
         .module('app')
         .factory('productsService', productsService);
 
-    function productsService($http, $filter) {
+    function productsService($http, $filter, API_URL) {
         var service = {
             getPoc: getPoc,
             getProducts: getProducts,
             getCategories: getCategories
         };
 
-        var url = "https://803votn6w7.execute-api.us-west-2.amazonaws.com/dev/public/graphql";
+        var endpoint = API_URL;
 
         return service;
 
@@ -275,7 +285,7 @@
                     "categoryId": categoryId
                 }
             };
-            return $http.post(url, parameters);
+            return $http.post(endpoint, parameters);
         }
 
         function getCategories() {
@@ -294,7 +304,7 @@
                 }
             };
 
-            return $http.post(url, parameters);
+            return $http.post(endpoint, parameters);
         }
 
 
@@ -329,7 +339,7 @@
                     "now": formattedDate
                 }
             };
-            return $http.post(url, parameters);
+            return $http.post(endpoint, parameters);
 
         }
 
