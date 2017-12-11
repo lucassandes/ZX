@@ -2,7 +2,7 @@
     <div class="row top-bar">
         <div class="col-xs-6 flex">
             <div class="search-bar center-block">
-                <select ng-options="cat.title for cat in vm.categories track by cat.id" ng-model="selectedItem" ng-change="vm.queryProducts(selectedItem.id, searchValue)">
+                <select ng-options="cat.title for cat in vm.categories track by cat.id" ng-model="selectedItem" ng-change="vm.queryProducts(selectedItem.id)">
                 </select>
             </div>
 
@@ -58,7 +58,7 @@
 
                 <div class="center-block text-center">
                     <button class="button button-remove" ng-click="vm.removeProduct($index)">-</button>
-                    <input type="number" min="0" ng-model="product.quantity" class="quantity" />
+                    <input type="number"  ng-model="product.quantity" ng-focus="product.oldQuantity = product.quantity" ng-blur="vm.updateCheck($index)" class="quantity" />
                     <button class="button button-add" ng-click="vm.addProduct($index)">+</button>
                 </div>
             </div>

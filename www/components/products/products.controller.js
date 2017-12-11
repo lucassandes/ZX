@@ -13,6 +13,7 @@
         vm.removeProduct = removeProduct;
         vm.addProduct = addProduct;
         vm.queryProducts = queryProducts;
+        vm.updateCheck = updateCheck;
         vm.loading = true;
         var geolocation = geolocationService.getGeolocation();
         var pocId;
@@ -22,10 +23,28 @@
             "title": "Todos"
         };
 
-       
+        //If a geolocation was not set, the user is redirected to Home
         if (angular.equals(geolocation, {})) {
             $location.path("/");
         }
+
+        function updateCheck(index){
+            //updates the check when the user uses the input to provide the quantity
+            if(vm.products[index].quantity != vm.products[index].oldQuantity){
+                if(vm.products[index].quantity < vm.products[index].oldQuantity) {
+                    
+                    //we can't have a negative amount of products
+                    if(vm.products[index].quantity < 0) {
+                        vm.products[index].quantity = 0;
+                    }
+                    //subtracts the difference
+                    vm.check = vm.check - vm.products[index].price * ( vm.products[index].oldQuantity - vm.products[index].quantity );
+                }
+                else {
+                    vm.check = vm.check + vm.products[index].price * ( vm.products[index].quantity - vm.products[index].oldQuantity );
+                }
+            }
+        } 
 
         function removeProduct(index) {
             if (vm.products[index].quantity > 0) {
@@ -40,11 +59,8 @@
         }
 
         var getCategories = function () {
-            var todos = {
-                "id": 0,
-                "title": "Todos"
-            };
-            vm.errorMessage="";
+           
+            vm.errorMessage = "";
             productsService
                 .getCategories()
                 .then(function successCallback(response) {
@@ -60,10 +76,13 @@
         };
 
         function queryProducts(categoryId, search) {
-            vm.errorMessage="";
+            vm.errorMessage = "";
             if(pocId){
+
+                //default values
                 categoryId = (typeof categoryId !== 'undefined') ? categoryId : 0;
                 search = (typeof search !== 'undefined')  ? search : "";
+                
                 vm.products = [];
 
                 vm.loading = true;
@@ -77,14 +96,14 @@
                 productsService
                     .getProducts(pocId, categoryId, search)
                     .then(function successCallback(response) {
-                        //console.log(response.data); 
+
                         var products = response.data.data.poc.products;
                         products.forEach(element => {
+                            //add default quantity for each product
                             element.productVariants[0].quantity = "";
                             vm.products.push(element.productVariants[0]);
                         });
 
-                        //console.log("lenght:", products.length);
                         if(products.length == 0){
                             vm.emptyMessage = "Sorry, no results for this search";
                         }
@@ -106,16 +125,12 @@
             //returns the last POC from pocSearch array that delivers in up to 1h
             var id = false;
             pocSearch.forEach(element => {
-                //console.log(element);
                 var i = 0;
                 for (i = 0; i < element.deliveryTypes.length; i++){
                     var typeId = element.deliveryTypes[i].deliveryTypeId;
-                    //console.log ("pocId", element.id);
-                    //console.log ("TypeId", typeId);
                     if(typeId == 166) {
                         id = element.id;
                         return id;
-                        
                     }
                 }
             });
@@ -141,11 +156,13 @@
                     }
                 }
             }
+
+            return id;
         };
 
         var getPoc = function () {
             vm.errorMessage = "";
-            
+             
             productsService
                 .getPoc(geolocation)
                 .then(function successCallback(response) {
@@ -153,7 +170,7 @@
                     var pocSearch = response.data.data.pocSearch;
 
                     //If we use this routine below, POC will be 242
-                    //pocId = getLastPoc(pocSearch);
+                    //pocId = getLastPoc(pocSearch); 
 
                     //If we use this routine below, POC will be 243
                     pocId = getFirstPoc(pocSearch);
