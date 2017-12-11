@@ -2,7 +2,7 @@
     <div class="row top-bar">
         <div class="col-xs-6 flex">
             <div class="search-bar center-block">
-                <select ng-options="cat.title for cat in vm.categories track by cat.id" ng-model="selectedItem" ng-change="vm.queryProducts(selectedItem.id)">
+                <select ng-options="cat.title for cat in vm.categories track by cat.id" ng-model="selectedItem" ng-change="vm.queryProducts(selectedItem.id, searchValue)">
                 </select>
             </div>
 

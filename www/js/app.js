@@ -79,7 +79,9 @@
         var vm = this;
         vm.address = "Rua Américo Brasiliense, São Paulo";
         vm.errorMessage = "";
-        vm.getGeo = function(adress) {
+        vm.getGeo = getGeo;
+        
+        function getGeo(adress) {
             homeService
                 .getAdressData(adress)
                 .then(function successCallback(response) {
@@ -116,7 +118,6 @@
         }
     }
 })();
-
 (function () {
     'use strict';
 
