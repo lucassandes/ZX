@@ -5,14 +5,14 @@
         .module('app')
         .factory('productsService', productsService);
 
-    function productsService($http, $filter) {
+    function productsService($http, $filter, API_URL) {
         var service = {
             getPoc: getPoc,
             getProducts: getProducts,
             getCategories: getCategories
         };
 
-        var url = "https://803votn6w7.execute-api.us-west-2.amazonaws.com/dev/public/graphql";
+        var endpoint = API_URL;
 
         return service;
 
@@ -40,7 +40,7 @@
                     "categoryId": categoryId
                 }
             };
-            return $http.post(url, parameters);
+            return $http.post(endpoint, parameters);
         }
 
         function getCategories() {
@@ -59,7 +59,7 @@
                 }
             };
 
-            return $http.post(url, parameters);
+            return $http.post(endpoint, parameters);
         }
 
 
@@ -94,7 +94,7 @@
                     "now": formattedDate
                 }
             };
-            return $http.post(url, parameters);
+            return $http.post(endpoint, parameters);
 
         }
 
