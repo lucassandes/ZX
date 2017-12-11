@@ -169,7 +169,7 @@
 
                     vm.categories = response.data.data.allCategory;
                     vm.categories.splice(0, 0, $scope.selectedItem);
-                    console.log("categories", vm.categories);
+                    //console.log("categories", vm.categories);
                 }, function errorCallback(response) {
                     console.log("Ops... Error :(");
                     vm.loading = false;
@@ -195,16 +195,16 @@
                 productsService
                     .getProducts(pocId, categoryId, search)
                     .then(function successCallback(response) {
-                        console.log(response.data); 
+                        //console.log(response.data); 
                         var products = response.data.data.poc.products;
                         products.forEach(element => {
                             element.productVariants[0].quantity = "";
                             vm.products.push(element.productVariants[0]);
                         });
 
-                        console.log("lenght:", products.length);
+                        //console.log("lenght:", products.length);
                         if(products.length == 0){
-                            vm.emptyMessage = "Sorry, bro. We couldn't find anything";
+                            vm.emptyMessage = "Sorry, no results for this search";
                         }
                         vm.loading = false;
                     }, function errorCallback(response) {
@@ -224,12 +224,12 @@
             //returns the last POC from pocSearch array that delivers in up to 1h
             var id = false;
             pocSearch.forEach(element => {
-                console.log(element);
+                //console.log(element);
                 var i = 0;
                 for (i = 0; i < element.deliveryTypes.length; i++){
                     var typeId = element.deliveryTypes[i].deliveryTypeId;
-                    console.log ("pocId", element.id);
-                    console.log ("TypeId", typeId);
+                    //console.log ("pocId", element.id);
+                    //console.log ("TypeId", typeId);
                     if(typeId == 166) {
                         id = element.id;
                         return id;
